@@ -1,0 +1,4 @@
+body { font-family: Arial; background: #f9fafb; }
+.container { width: 60%; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; }
+button { padding: 5px 10px; margin: 5px; }
+.flash { color: green; }

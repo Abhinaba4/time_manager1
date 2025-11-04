@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Task Report</h2>
+<table border="1">
+    <tr><th>Task</th><th>Time (min)</th><th>Date</th></tr>
+    {% for t in tasks %}
+        <tr>
+            <td>{{ t.name }}</td>
+            <td>{{ t.total_time }}</td>
+            <td>{{ t.start_time.strftime('%Y-%m-%d %H:%M') }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<p><b>Total Time:</b> {{ total }} minutes</p>
+<a href="/">← Back</a>
+{% endblock %}

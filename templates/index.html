@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/start" method="POST">
+    <input type="text" name="task_name" placeholder="Enter task name" required>
+    <button type="submit">Start Task</button>
+</form>
+
+<h2>Active / Completed Tasks</h2>
+<ul>
+    {% for t in tasks %}
+        <li>
+            {{ t.name }} — 
+            {% if not t.end_time %}
+                <a href="/stop/{{ t.id }}">Stop</a>
+            {% else %}
+                Done ({{ t.total_time }} min)
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="/report">View Report</a>
+{% endblock %}
